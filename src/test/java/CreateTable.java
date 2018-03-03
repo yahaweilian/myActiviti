@@ -26,6 +26,25 @@ public class CreateTable {
 		ProcessEngine processEngine = processEngineConfiguration.buildProcessEngine();
 		System.out.println(processEngine);
 	}
+	
+	@Test
+	public void createTable3() {
+		// 工作流引擎的全部配置
+		ProcessEngineConfiguration processEngineConfiguration = ProcessEngineConfiguration
+				.createStandaloneProcessEngineConfiguration();
+		// 连接数据的配置
+		processEngineConfiguration.setJdbcDriver("oracle.jdbc.driver.OracleDriver");
+		processEngineConfiguration.setJdbcUrl(
+				"jdbc:oracle:thin:@localhost:1521:xe");
+		processEngineConfiguration.setJdbcUsername("tlps");
+		processEngineConfiguration.setJdbcPassword("tlps");
+		processEngineConfiguration.setDatabaseSchema("activiti");
+		// 如果表不存在自动创建表
+		processEngineConfiguration.setDatabaseSchemaUpdate(processEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
+		// 工作流的和新对象，ProcessEnginee对象
+		ProcessEngine processEngine = processEngineConfiguration.buildProcessEngine();
+		System.out.println(processEngine);
+	}
 
 	@Test
 	public void createTable2() {

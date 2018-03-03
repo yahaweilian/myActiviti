@@ -12,6 +12,6 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 		<property name="jdbcUsername" value="root"></property>
 		<property name="jdbcPassword" value="123456"></property>
 		<!-- 没有表创建表 -->
-		<property name="databaseSchemaUpdate" value="true"></property>
+		<property name="databaseSchemaUpdate" value="drop-create"></property>
 	</bean>
 </beans>
